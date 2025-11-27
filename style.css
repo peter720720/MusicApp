@@ -1,0 +1,221 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  list-style-type: none;
+  text-decoration: none;
+}
+
+
+body {
+  transition: opacity 0.5s ease-in-out;
+  opacity: 1;
+}
+
+:root {
+  --backgroundColor: #313133;
+  --iconColor: #1D6F56;
+  --cardColor: #3E3E3E;
+  --activeCardColor: #4B4B4B;
+  --textColor: #9E9EA0;
+  --currentMusic: #333335;
+  --progressBar: #ffa500;
+}
+
+
+.container {
+  /* background: var(--currentMusic); */
+  position: static;
+  overflow-x: 10vh;
+  background-image: url(/img/background.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 16px;
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
+  margin: auto;
+  margin-top: 3rem;
+  width: 90%;
+}
+
+.paddingContainer {
+  padding: 1rem;
+
+}
+
+.box_1 {
+  background: url(/img/background.png);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  justify-content: space-between;
+  margin-top: 1rem;
+  padding: 1rem;
+}
+
+.wiz {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  color: var(--textColor);
+}
+
+.wiz img {
+  border-radius: 50%;
+  height: 75px;
+  width: 75px;
+}
+
+.text-color {
+  color: var(--text-color-2);
+}
+
+.nav-item a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.nav-item i {
+  text-align: center;
+}
+
+.link {
+  background: url(img/background.png);
+  background-size: cover;
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7%;
+  margin-top: 2rem;
+  width: 100%;
+  height: 10vh;
+  margin-bottom: 5px;
+}
+
+.nav-item a {
+  color: var(--textColor);
+}
+
+.nav-item a:focus {
+  color: peru;
+}
+.action-btn {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background: var(--currentMusic);
+  color: var(--textColor);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 18px;
+}
+
+.action-btn.checked {
+  background: var(--iconColor);
+}
+
+.delete-icon {
+  color: var(--textColor);
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+#current-Music {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background-color: var(--backgroundColor);
+  height: 20vh;
+  margin-top: 2rem;
+  margin-left: -1.2rem;
+  width: 110%;
+  border-radius: 35px;
+  box-shadow: 2px 0px 0px var(--textColor);
+}
+
+.musicProgress {
+  text-align: center;
+  margin: 1rem 1rem;
+  /* margin-top: 1rem;
+  margin-bottom: 1rem; */
+}
+
+.progress-container {
+  background: var(--textColor);
+  height: 8px;
+  width: 300px;
+  border-radius: 4px;
+  overflow: hidden;
+  margin: auto;
+}
+
+.progress-bar {
+  border-radius: 4px;
+  height: 100%;
+  width: 50%;
+  background: var(--progressBar);
+  transition: width 0.1s linear;
+}
+
+.music-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  margin-top: 2rem;
+  /* text-align: center; */
+  gap: 10%;
+}
+
+.control-btn_2 {
+  background-image: url(img/background.png);
+  /* box-shadow: 2px 1px 0px var(--textColor); */
+  /* border: 1px solid; */
+  border-radius: 50%;
+  color: var(--iconColor);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 90px;
+  height: 90px;
+
+}
+
+.control-btn {
+  background-image: url(img/background.png);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--iconColor);
+  cursor: pointer;
+  box-shadow: 2px 1px 0px var(--textColor);
+  border: 1px solid;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+}
+
+#current-title {
+  margin-bottom: 15px;
+  color: var(--textColor);
+}
+
+.nav-item.active {
+  color: red;
+}
+
+@media (min-width: 1022px) {
+  .container {
+    width: 38%;
+  }
+}

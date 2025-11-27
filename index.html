@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="paddingContainer">
+            <div id="playlist"></div>
+    
+            <div id="loader" style="display: none;"></div>
+    
+    
+    
+            <div class="musicProgress">
+                <p id="current-title">No song selected</p>
+                <div class="progress-container" id="progress-container">
+                    <div class="progress-bar" id="progress-bar"></div>
+                </div>
+            </div>
+            <audio id="audioPlayer"></audio>
+    
+            <div class="music-controls">
+                <div class="control-btn">
+                    <i class="fa-solid fa-backward-step"></i>
+                </div>
+    
+                <div class="control-btn_2">
+                    <i id="playBtn" class="fa-solid fa-play"></i>
+                    <i id="pauseBtn" class="fa-solid fa-pause" style="display: none;"></i>
+                </div>
+                <div class="control-btn">
+                    <i id="forwardBtn" class="fa-solid fa-forward-step"></i>
+                </div>
+            </div>
+        </div>
+      
+        <div class="link">
+            <div class="nav-item" data-page="home">
+                <a href="index.html" id="homeLink">
+                    <i class="fa-regular fa-house"></i>
+                   <span>Home</span>
+                </a>
+            </div>
+
+             <div class="nav-item">
+                <a href="search.html" class="page-link">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                   <span>Search</span> 
+                </a>
+            </div>
+
+            <div class="nav-item">
+                <a href="playlist.html" class="page-link">
+                    <i class="fa-solid fa-barcode"></i>
+                   <span>Library</span> 
+                </a>
+            </div>
+
+           
+        </div>
+    </div>
+
+
+    <script src="app.js"></script>
+    <script src="script.js"></script>
+    <script>
+        loadPlaylist();
+    </script>
+</body>
+
+</html>
