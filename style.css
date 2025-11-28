@@ -144,15 +144,16 @@ body {
 
 .musicProgress {
   text-align: center;
-  margin: 1rem 1rem;
+  margin: 1rem 10rem 1rem 0;
   /* margin-top: 1rem;
   margin-bottom: 1rem; */
 }
 
 .progress-container {
   background: var(--textColor);
+  cursor: pointer;
   height: 8px;
-  width: 300px;
+  width: 160%;
   border-radius: 4px;
   overflow: hidden;
   margin: auto;
@@ -164,6 +165,13 @@ body {
   width: 50%;
   background: var(--progressBar);
   transition: width 0.1s linear;
+}
+
+.time-display {
+  display: flex;
+  font-size: 18px;
+  color: var(--textColor);
+  justify-content: space-between;
 }
 
 .music-controls {
@@ -214,8 +222,38 @@ body {
   color: red;
 }
 
+#searchResults {
+
+  margin-top: 10px;
+  list-style-type: none;
+  padding: 0;
+
+}
+
+#searchResults li {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  cursor: pointer;
+}
+
+.input input {
+  border-radius: 10px;
+  padding: 1rcap;
+  width: 100%;
+}
+
+.input .fa-magnifying-glass {
+  position: absolute;
+  top: 9.5%;
+  margin-left: 1rem;
+}
+
 @media (min-width: 1022px) {
   .container {
     width: 38%;
   }
+
+  .progress-container {
+    width: 148%;
+  } 
 }

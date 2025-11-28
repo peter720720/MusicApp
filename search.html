@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,37 +10,47 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Document</title>
 </head>
+
 <body>
     <div class="container">
+        <div class="input">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input id="searchInput" type="search" style="padding-left: 2.5rem;" placeholder="Artists, songs, albums and playlist...">
+        </div>
+        <ul id="searchResults"></ul>
+        <div class="paddingContainer">
+            gg
+        </div>
         <div class="link">
             <div class="nav-item" data-page="home">
                 <a href="index.html" id="homeLink">
                     <i class="fa-regular fa-house"></i>
-                   <span>Home</span>
+                    <span>Home</span>
                 </a>
             </div>
 
-             <div class="nav-item">
+            <div class="nav-item">
                 <a href="search.html" class="page-link">
                     <i class="fa-solid fa-magnifying-glass"></i>
-                   <span>Search</span> 
+                    <span>Search</span>
                 </a>
             </div>
 
             <div class="nav-item">
                 <a href="playlist.html" class="page-link">
                     <i class="fa-solid fa-barcode"></i>
-                   <span>Library</span> 
+                    <span>Library</span>
                 </a>
             </div>
 
-           
+
         </div>
     </div>
-     <script src="app.js"></script>
+    <script src="app.js"></script>
     <script src="script.js"></script>
     <script>
         loadPlaylist();
     </script>
 </body>
+
 </html>

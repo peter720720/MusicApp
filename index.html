@@ -15,24 +15,28 @@
     <div class="container">
         <div class="paddingContainer">
             <div id="playlist"></div>
-    
+
             <div id="loader" style="display: none;"></div>
-    
-    
-    
+
+
+
             <div class="musicProgress">
                 <p id="current-title">No song selected</p>
                 <div class="progress-container" id="progress-container">
                     <div class="progress-bar" id="progress-bar"></div>
                 </div>
             </div>
+            <div class="time-display">
+                <span id="current-time">0:00</span>
+                <span id="remaining-time">0:00</span>
+            </div>
             <audio id="audioPlayer"></audio>
-    
+
             <div class="music-controls">
                 <div class="control-btn">
-                    <i class="fa-solid fa-backward-step"></i>
+                    <i id="prevBtn" class="fa-solid fa-backward-step"></i>
                 </div>
-    
+
                 <div class="control-btn_2">
                     <i id="playBtn" class="fa-solid fa-play"></i>
                     <i id="pauseBtn" class="fa-solid fa-pause" style="display: none;"></i>
@@ -42,30 +46,30 @@
                 </div>
             </div>
         </div>
-      
+
         <div class="link">
             <div class="nav-item" data-page="home">
                 <a href="index.html" id="homeLink">
                     <i class="fa-regular fa-house"></i>
-                   <span>Home</span>
+                    <span>Home</span>
                 </a>
             </div>
 
-             <div class="nav-item">
+            <div class="nav-item">
                 <a href="search.html" class="page-link">
                     <i class="fa-solid fa-magnifying-glass"></i>
-                   <span>Search</span> 
+                    <span>Search</span>
                 </a>
             </div>
 
             <div class="nav-item">
                 <a href="playlist.html" class="page-link">
                     <i class="fa-solid fa-barcode"></i>
-                   <span>Library</span> 
+                    <span>Library</span>
                 </a>
             </div>
 
-           
+
         </div>
     </div>
 

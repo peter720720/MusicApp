@@ -53,8 +53,35 @@ const songs = [
         artist: "Fola ft Kizz-Daniel",
         cover: "img/Kizz-Daniel-–-Lost-Ft.-FOLA.webp",
         src: "music/Kizz_Daniel_Ft_FOLA_-_Lost.mp3"
+    },
+
+    {
+        id: 8,
+        title: "Getting Paid | val9ja.com",
+        artist: "Sarz Ft Asake, WizKid & Skillibeng",
+        cover: "img/Sarz-Protect-Sarz-At-All-Costs-Album.avif",
+        src: "music/Sarz_Ft_Asake_WizKid_Skillibeng_-_Getting_Paid.mp3"
+    },
+
+    {
+        id: 9,
+        title: "Many People",
+        artist: "Adekunle Ft Yinka Ayefele & Adewale Ayuba",
+        cover: "img/adekunle many.jpg",
+        src: "music/Adekunle_Gold_-_Many_People_Ft_Yinka_Ayefele_Adewale_Ayuba.mp3"
+    },
+
+    {
+        id: 10,
+        title: "Happy",
+        artist: "Seyi Vibez",
+        cover: "img/seyi vibez.jpg",
+        src: "music/Seyi_Vibez_-_HAPPY_SONG (1).mp3"
     }
 ];
+
+
+
 
 // ---------- STORAGE: store ids of added songs ----------
 const STORAGE_KEY = "playlistSongs";
@@ -160,6 +187,8 @@ const pauseBtn = document.getElementById('pauseBtn');
 const progressContainer = document.getElementById('progress-container');
 const progressBar = document.getElementById('progress-bar');
 const currentTitle = document.getElementById('current-title');
+const currentTimeE1 = document.getElementById("current-time");
+const remainingTimeE1 = document.getElementById("remaining-time");
 
 function playSongById(id) {
     const song = songs.find(s => s.id === id);
@@ -167,7 +196,7 @@ function playSongById(id) {
     if (!audioPlayer) return;
 
     audioPlayer.src = song.src;
-    audioPlayer.play().catch(() => {});
+    audioPlayer.play().catch(() => { });
 
     if (currentTitle) currentTitle.innerItem = song.title = song.artist;
     if (playBtn) playBtn.style.display = 'none';
@@ -190,12 +219,23 @@ if (playBtn && pauseBtn && audioPlayer) {
         if (playBtn) playBtn.style.display = 'inline-block';
     });
 
-    audioPlayer.addEventListener('timeupdate', () => {
-        if (!progressBar) return;
-        if (!audioPlayer.duration || isNaN(audioPlayer.duration)) return;
-        const percent = (audioPlayer.currentTime / audioPlayer.duration) * 100;
-        progressBar.style.width = percent + '%';
+
+    audioPlayer.addEventListener("loadedmetadata", () => {
+        remainingTimeE1.textContent = formatTime(audioPlayer.duration);
+        currentTimeE1.textContent = "0:00";
     });
+
+
+    audioPlayer.addEventListener("timeupdate", () => {
+        if (!audioPlayer.duration) return;
+
+        const percent = (audioPlayer.currentTime / audioPlayer.duration) * 100;
+        progressBar.style.width = percent + "%";
+
+        currentTimeE1.textContent = formatTime(audioPlayer.currentTime);
+        remainingTimeE1.textContent = formatTime(audioPlayer.duration);
+    });
+
 
     if (progressContainer) {
         progressContainer.addEventListener('click', (e) => {
@@ -266,7 +306,7 @@ function playSongByIdClean(id) {
 
     currentSongId = id;
     audioPlayer.src = song.src;
-    audioPlayer.play().catch(() => {});
+    audioPlayer.play().catch(() => { });
 
     if (currentTitle) currentTitle.innerText = song.title;
     if (playBtn) playBtn.style.display = 'none';
@@ -332,11 +372,23 @@ if (forwardBtn) {
 window.playSongById = playSongByIdClean;
 
 
-document.querySelectorAll('.nav-item').forEach(item => {
-    item.addEventListener('click', () => {
+function formatTime(seconds) {
+    const mins = Math.floor(seconds / 60);
+    const secs = Math.floor(seconds % 60);
+    return `${mins}:${secs < 10 ? "0" : ""}${secs}`;
+}
 
-        document.querySelectorAll('.nav-item').forEach(i => i.classList.remove('active'));
 
-        item.classList.add('active');
-    });
-});
+
+
+
+
+// document.querySelectorAll('.nav-item').forEach(item => {
+//     item.addEventListener('click', () => {
+
+//         document.querySelectorAll('.nav-item').forEach(i => i.classList.remove('active'));
+
+//         item.classList.add('active');
+//     });
+// });
+
