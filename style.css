@@ -43,7 +43,7 @@ body {
   border-radius: 20px;
   display: flex;
   align-items: center;
-  cursor: pointer;
+  /* cursor: pointer; */
   justify-content: space-between;
   margin-top: 1rem;
   padding: 1rem;
@@ -140,7 +140,7 @@ body {
 
 .progress-container {
   background: var(--textColor);
-  cursor: pointer;
+  /* cursor: pointer; */
   height: 8px;
   width: 100%;
   border-radius: 4px;
@@ -178,7 +178,7 @@ body {
   background-image: url(img/background.png);
   border-radius: 50%;
   color: var(--iconColor);
-  cursor: pointer;
+  /* cursor: pointer; */
   display: flex;
   align-items: center;
   justify-content: center;
