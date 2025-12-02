@@ -106,9 +106,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-audioPlayer.addEventListener("ended", function () {
-    nextSong();
+audioPlayer.addEventListener("ended", () => {
+    const added = getStoredIds();
+    if (!added.length) return;
+
+    if (currentSongId === null) {
+        playSongByIdClean(added[0]);
+        return;
+    }
+
+    const idx = added.indexOf(currentSongId);
+    const nextIdx = (idx + 1) % added.length;
+
+    playSongByIdClean(added[nextIdx]);
 });
+
 
 
 function updatePlayPauseIcons() {
@@ -125,5 +137,9 @@ function updatePlayPauseIcons() {
 }
 
 
+// function loadSong(song) {
+//     currentTitle.innerText = `${song.title} - ${song.artist}`;
+//     audioPlayer.src = song.url;
+// }
 
 

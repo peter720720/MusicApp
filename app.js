@@ -369,6 +369,26 @@ if (forwardBtn) {
 }
 
 
+const prevBtn = document.getElementById('prevBtn');
+
+if (prevBtn) {
+    prevBtn.addEventListener('click', () => {
+        const added = getStoredIds();
+        if (!added.length) return;
+
+        if (currentSongId === null) {
+            playSongByIdClean(added[0]);
+            return;
+        }
+
+        const idx = added.indexOf(currentSongId);
+        const prevIdx = (idx <= 0) ? added.length - 1 : idx - 1;
+        playSongByIdClean(added[prevIdx]);
+    });
+}
+
+
+
 window.playSongById = playSongByIdClean;
 
 
